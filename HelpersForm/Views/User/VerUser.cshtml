@@ -1,0 +1,54 @@
+﻿@model HelpersForm.Models.Usuario
+<style>
+
+
+    .clase {
+        text-align: center;
+        color: darkblue;
+    }
+</style>
+
+<h1 class="clase">Informaciones generales</h1> <br />
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Cedula</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Genero</th>
+        <th>Estado Civil</th>
+        <th>PasaTiempo</th>
+
+    </tr>
+    <tr>
+        <td>@Model.Cedula</td>
+        <td>@Model.Nombre</td>
+        <td>@Model.Apellido</td>
+        <td>@Model.Edad</td>
+        <td>@Model.Telefono</td>
+        <td>@Model.Correo</td>
+        <td>@Model.Genero</td>
+        <td>@Model.Estado_Civil</td>
+        <td>
+            @if (Model.Pasatiempos_1 == true)
+            {
+               <p>Jugar </p>
+             }
+            @if (Model.Pasatiempos_2 == true)
+            {
+               <p>Correr</p>
+            }
+            @if (Model.Pasatiempos_3 == true)
+            { 
+                    <p>Leer</p>
+            }
+            @if (Model.Pasatiempos_4 == true)
+            {
+                <p>Dormir</p>
+            }
+       </td>
+        </tr>
+</table>

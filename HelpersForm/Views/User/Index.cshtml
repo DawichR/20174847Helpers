@@ -1,0 +1,89 @@
+﻿@using HelpersForm.Models
+
+@model HelpersForm.Models.Usuario
+@{
+    ViewBag.Title = "Formulario";
+}
+
+<style>
+
+    .titulo {
+        text-align: center;
+        color: blueviolet;
+    }
+
+</style>
+
+<h1 class="titulo">Rellene este formulario</h1>
+
+@using (Html.BeginForm("Index", "User", FormMethod.Post))
+{
+<div class="form-horizontal" style="padding-left:35%;">
+
+    @Html.LabelForModel("Cedula")
+    <br />
+    @Html.TextBoxFor(x => x.Cedula, new { @class = "format-control" })
+    @Html.ValidationMessageFor(x => x.Cedula, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelForModel("Nombre")
+    <br />
+    @Html.TextBoxFor(x => x.Nombre, new { @class = "format-control" })
+    @Html.ValidationMessageFor(x => x.Nombre, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelForModel("Apellido")
+    <br />
+    @Html.TextBoxFor(x => x.Apellido, new { @class = "format-control" })
+    @Html.ValidationMessageFor(x => x.Apellido, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelForModel("Edad")
+    <br />
+    @Html.EditorFor(x => x.Edad, new { @class = "format-control" })
+    @Html.ValidationMessageFor(x => x.Edad, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.LabelForModel("Telefono")
+    <br />
+    @Html.EditorFor(x => x.Telefono, new { @class = "format-control" })
+    @Html.ValidationMessageFor(x => x.Telefono, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.LabelForModel("Correo")
+    <br />
+    @Html.TextBoxFor(x => x.Correo, new { @class = "format-control" })
+    @Html.ValidationMessageFor(x => x.Correo, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelForModel("Genero")
+    <br />
+    @Html.DropDownListFor(x => x.Genero, new SelectList(Enum.GetValues(typeof(Generos))), "Elija su Genero")
+    @Html.ValidationMessageFor(x => x.Genero, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.LabelForModel("Estado Civil")
+    <br />
+    @Html.RadioButtonFor(x => x.Estado_Civil, "Soltero") <label>Soltero</label>
+    &nbsp;
+    @Html.RadioButtonFor(x => x.Estado_Civil, "Casado") <label>Casado</label>
+    &nbsp;
+    @Html.RadioButtonFor(x => x.Estado_Civil, "Viudo") <label>Viudo</label>
+    &nbsp;
+    @Html.RadioButtonFor(x => x.Estado_Civil, "Union_Libre") <label>Union_Libre</label>
+    <br />
+
+    @Html.LabelForModel("Pasatiempo")
+    <br />
+    <label>Jugar</label>
+    @Html.CheckBoxFor(x => x.Pasatiempos_1)
+    &nbsp;
+    <label>Correr</label>
+    @Html.CheckBoxFor(x => x.Pasatiempos_2)
+    &nbsp;
+    <label>Leer</label>
+    @Html.CheckBoxFor(x => x.Pasatiempos_3)
+    &nbsp;
+    <label>Dormir</label>
+    @Html.CheckBoxFor(x => x.Pasatiempos_4)
+
+    <br /> <br />
+        <input type="submit" class="btn btn-success" value="Enviar" />
+    </div>
+    }
