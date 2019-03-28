@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\Dawich\\Desktop\\ProyectoFinal-Programacion-3\\2017-4847-HtmlHelpers\\HelpersForm\\HelpersForm\\HelpersForm.csproj",
+  "TargetFramework": "v4.6.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
